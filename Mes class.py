@@ -9,6 +9,8 @@ class Fichier(ABC):
         self.__text = text
         self.__word = word
         self.__pdf = pdf
+    def images(self,image):
+        self.image = image
     
 
         
