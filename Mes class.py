@@ -9,6 +9,7 @@ class Fichier(ABC):
         self.__text = text
         self.__word = word
         self.__pdf = pdf
+    
 
         
 
