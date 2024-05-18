@@ -11,6 +11,11 @@ class Fichier(ABC):
         self.__pdf = pdf
     def images(self,image):
         self.image = image
+
+class image(Fichier):
+    def __init__(self, image):
+        self.image = image  
+        super().__init__(image)
     
 
         
