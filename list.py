@@ -1,29 +1,32 @@
 import os,shutil
 
 liste_fichier = []
-f = "D:/folders"
-chemin = "D:/OneDriver/OneDrive/Bureau/TP EXAMENS POO GP"
-contenu_dossier = os.listdir(chemin)
+dossier_cible = "D:/OneDriver/OneDrive/Bureau/TP EXAMENS POO GP"
+dossier_source = "D:/OneDriver/OneDrive/Bureau/TP EXAMENS POO GP"
+contenu_dossier = os.listdir(dossier_source)
 for element in contenu_dossier:
     liste_fichier.append(element)
     # chemin_dossier_destination = i
-    if os.path.isfile(element):
-        for i in range(0,len(liste_fichier)):
-            ext = liste_fichier[i]
-            ext_convert = "".join(ext)
-            liste_ext = []
-            liste = ext_convert.split(".")
-            liste_1 = liste[-1]
-            liste_ext.append(liste_1)
-            for i in range(0,len(liste_ext)):
-                fichier = liste_ext[i]
-                os.makedirs(fichier,exist_ok=True)
-        chemin_dossier_destination = os.path.join(f, element)
-        shutil.move(chemin, chemin_dossier_destination)
-        print("deplacement avec success")
-    else:
-        print("les fichiers n'ont pas ete deplace")
-
+    chemin_dossier_source = os.path.join(dossier_source,element)
+    for i in range(0,len(liste_fichier)):
+        ext = liste_fichier[i]
+        ext_convert = "".join(ext)
+        liste_ext = []
+        liste = ext_convert.split(".")
+        liste_1 = liste[-1]
+        liste_ext.append(liste_1)
+        for i in range(0,len(liste_ext)):
+            fichier = liste_ext[i]
+            os.makedirs(fichier,exist_ok=True)
+            
+for fichiers in os.listdir(dossier_source):
+    chemin_dossier_source = os.path.join(dossier_source,fichiers)
+    if os.path.isfile(chemin_dossier_source):
+        extension = fichier[-1]
+        if extension in liste_fichier:
+            chemin_dossier_destination = os.path.join(dossier_cible, fichier)
+            # print(chemin_dossier_destination)
+            shutil.move(chemin_dossier_source, chemin_dossier_destination)
 
 
 
