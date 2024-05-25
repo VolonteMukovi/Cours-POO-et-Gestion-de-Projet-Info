@@ -32,22 +32,5 @@ class ExtensionFileOrganizer(FileOrganizer):
                     print("Pas de dossiers correspondants à ce fichier")
             else:
                 print("Ce n'est pas un fichier")
-            # if(shutil.move(chemin_dossierFile, chemin_dossier_destination)):
-            #     showinfo("Information", "Déplacement avec succès")
 
-# """    def organiser(self, dossierFile, extension):
-#         for nom_fichier in os.listdir(dossierFile):
-#             chemin_dossierFile = os.path.join(dossierFile, nom_fichier)
-#             if os.path.isfile(chemin_dossierFile):
-#                 list_ext = nom_fichier.split(".")
-#                 list_ext_1 = list_ext[-1]
-#                 if list_ext_1 == extension:
-#                     chemin_dossier_destination = os.path.join(dossierFile, extension)
-#                     shutil.move(chemin_dossierFile, chemin_dossier_destination)
-#                     print("Déplacement avec succès pour l'extension", extension)
-#                 else:
-#                     print("Pas de fichiers avec l'extenskion spécifiée dans le dossier")"""
-
-# organize = ExtensionFileOrganizer()
-# organize.organiser("D:\OneDriver\OneDrive\Bureau\TP EXAMENS POO GP")
 

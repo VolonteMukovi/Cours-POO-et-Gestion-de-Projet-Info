@@ -2,6 +2,7 @@ from tkinter import *
 import tkinter as tk
 from tkinter import filedialog
 from classes.Mes_class import ExtensionFileOrganizer
+from customtkinter import *
 
 
 window = Tk()
@@ -34,10 +35,10 @@ texte.tag_configure('center',justify="center")
 texte.tag_add("center",'1.0','end')
 texte.pack(expand=True)
 
-button = Button(framedroite,text="Selectionner un Dossier a Organisant",bg="blue",fg="white",command=organization)
-button.place(x='110',y='200')
-# button_org = Button(framedroite,text="Organise",bg="white",fg="blue",command=org)
+button = CTkButton(master=framedroite,text="Selectionner un Dossier a Organisant",corner_radius=32,fg_color="#C850C0",hover_color="#4158D0",command=organization)
+button.place(relx=0.5,rely=0.5,anchor="center")
 # button_org.place(x='160',y='250')
-
+# (framedroite,text="Selectionner un Dossier a Organisant",bg="blue",fg="white",command=organization)
+# button.place(x='110',y='200')
 
 window.mainloop()
